@@ -1,0 +1,11 @@
+.card-body{
+box-shadow: grey;
+}
+
+.card{
+    margin: 10px;
+}
+
+.next{
+    margin-left: 60%;
+}

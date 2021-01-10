@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h4 class="modal-title">Nueva Categoria</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <form [formGroup]="myForm" (ngSubmit)="guardar()">
+            <div class="form-group" >
+                <label for="Nombre">Nombre</label>
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="form-group" >
+                <label for="Nombre">Imagen </label>
+                <input type="text" class="form-control" formControlName="image">
+              </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-dark" (click)="guardar()">Guardar</button>
+  </div>

@@ -1,0 +1,9 @@
+<div class="form-group">
+    <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Categorias</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let categoria of categories" (click)="getCat(categoria.name,categoria._id)">{{categoria.name}}</button> 
+        </div>
+      </div>
+      <button class="btn btn-dark" ngbTooltip="Nueva Categoria" (click)="openModal()">+</button>
+ </div>

@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4" >
+          <div class="card" style="width: 16rem;">
+            <img src="{{image}}" class="card-img-top" alt="..." width="250px" height="150px">
+            <div class="card-body">
+              <h5 class="card-title" >{{name}}</h5>
+              <p class="card-text">{{description}}</p>
+              <p class="card-text">SKU:{{sku}}</p>
+              <p class="card-text">${{price}}</p>
+              <p class="card-text">{{catSelected[0]}}</p>
+              <p class="card-text">Stock : {{quantity}}</p>
+            </div>
+            <button class="btn btn-dark" (click)="guardar()">Guardar</button>
+          </div>
+        </div>
+
+        <div class="col-sm">
+            <form [formGroup]="myForm" >
+                <div class="form-group" >
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="name"  formControlName="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control"  [(ngModel)]="description"  formControlName="description">
+                  </div>
+                  <div class="form-group">
+                    <label for="sku">sku</label>
+                    <input type="number" class="form-control" [(ngModel)]="sku"  formControlName="sku">
+                  </div>
+                  <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control"  [(ngModel)]="price"  formControlName="price">
+                  </div>
+                  <app-categorias-form (change)="catSelected=$event" ></app-categorias-form>
+                    
+                  <div class="form-group">
+                    <label for="quantity">Cantidad</label>
+                    <input type="number" class="form-control" [(ngModel)]="quantity"  formControlName="quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" class="form-control"  [(ngModel)]="image"  formControlName="image">
+                  </div>
+                  
+            </form>
+        </div>
+    </div>  
+</div>
+

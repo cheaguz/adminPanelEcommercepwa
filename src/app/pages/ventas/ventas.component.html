@@ -1,0 +1,48 @@
+<div class="container ">
+    <div class="row marco" *ngFor="let venta of ventas">
+      <div class="col-6 col-md-4" >
+    <h1>Datos user</h1>
+    <p>Usuario :{{venta.user_id.user}}</p>
+    <p>Nombre :{{venta.user_id.name}}</p>
+    <p>Apellido :{{venta.user_id.lastname}}</p>
+    <p>email : {{venta.user_id.email}}</p>
+    </div>
+    <div class="col-6 col-md-4">
+    <h1>Datos producto</h1>
+    <p>Producto :{{venta.product_id.name}}</p>
+    <p>Precio  web:{{venta.priceWeb}}</p>
+        <p>Cantidad :{{venta.cantidad}}</p>
+        <p>Total web : {{venta.totalWeb}}</p>
+        <p>ID venta = {{venta._id}}</p>
+        <h2>Pago :</h2>
+        <p>Forma de pago : {{venta.pago}}</p>
+        <p>Estado : {{venta.status}}</p>
+        <p>Fecha : {{venta.date}}</p>
+    </div>
+        <div class="col-6 col-md-4">
+        <h2>Db</h2>
+        <p>Precio prod: {{venta.priceProd}}</p>
+        <p>total db: {{venta.totalDB}}</p>
+        <button class="btn btn-dark"(click)="aprobar(venta._id)">Aprobar</button>
+        <button class="btn btn-danger"(click)="rechazar(venta._id)">Rechazar</button>
+       
+    </div>
+    
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-dark" *ngIf="hasPrevPage" (click)="changePage('prev')">Anterior</button>
+      </div>
+      <div class="col next">
+        <button class="btn btn-dark " *ngIf="hasNextPage" (click)="changePage('next')" >Siguiente</button>
+  
+      </div>
+    </div>
+  </div>
+  
+
+

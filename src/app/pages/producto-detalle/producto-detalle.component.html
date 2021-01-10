@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4" >
+          <div class="card" style="width: 16rem;">
+            <img src="{{producto.image}}" class="card-img-top" width="250px" height="150px">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.name}}</h5>
+              <p class="card-text">{{producto.description}}</p>
+              <p class="card-text">SKU :{{producto.sku}}</p>
+              <p class="card-text">${{producto.price}}</p>
+              <p class="card-text">Categoria :{{producto.category.name}}</p>
+              <p class="card-text">Stock : {{producto.quantity}}</p>
+              
+            </div>
+            <button class="btn btn-dark" (click)="guardar()" >Guardar</button>
+            <button class="btn btn-danger" (click)="eliminar()">Eliminar Producto</button>
+          </div>
+        </div>
+
+        <div class="col-sm">
+            <form [formGroup]="myForm"  >
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" placeholder="{{producto.name}}" formControlName="name" >
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control"   placeholder={{producto.description}} formControlName="description">
+                  </div>
+                  <div class="form-group">
+                    <label for="sku">sku</label>
+                    <input type="text" class="form-control"  placeholder={{producto.sku}} formControlName="sku">
+                  </div>
+                  <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" placeholder={{producto.price}} formControlName="price">
+                  </div> 
+                          
+                   <app-categorias-form (change)="catSelected=$event"></app-categorias-form>
+                  
+                  <div class="form-group">
+                    <label for="quantity">Cantidad</label>
+                    <input type="number" class="form-control"   placeholder={{producto.quantity}} formControlName="quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="text" class="form-control"   placeholder={{producto.image}} formControlName="image">
+                  </div>
+                  
+            </form>
+            
+        </div>
+    </div>  
+</div>
+

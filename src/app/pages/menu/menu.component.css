@@ -1,0 +1,14 @@
+span {
+    color : white;
+    font-size: 20px;
+}
+
+span:hover{
+    
+    color : #3BDE2E;
+}
+
+
+.nav-link:hover{
+    color : #3BDE2E;
+}
